@@ -1,0 +1,193 @@
+footer {
+    box-sizing: border-box;
+    @include clearfix;
+    text-align: left;
+    font-size: 0.813em;
+    padding: 270px 30px 1em;
+    background: url('../images/footerbg.png')no-repeat left top;
+    min-height: 600px;
+    background-size: cover;
+    position: relative;
+    .container {
+        @include gutter;
+        >div {
+            padding-bottom: 1em;
+        }
+        display: flex;
+        @include screen('tablet') {
+            flex-wrap:wrap;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+    .footer_logo {
+        // flex:0 1 auto;
+        img{
+            width: 300px;
+        }
+    }
+    .footer_info {
+        flex:1 1 auto;
+    }
+    .footer_menu{
+        list-style: none;
+        margin: .5em 0;
+        padding: 0;
+        font-size: 1.25em;
+        li{
+            display: inline-block;
+            background: url('../images/arrow1.png')no-repeat left center;
+            background-size: 12px auto;
+            padding: 0 2px 0 20px;
+            margin-right: 1em;
+            a{
+                display: block;
+                color:#000;
+                &:hover, &:focus{
+                  color:$aHover;  
+              }
+          }
+      }
+  }
+  .footer_icon {
+    flex:0 1 300px;
+    align-self:flex-end;
+    @include screen('tablet') {
+       flex:1 1 100%; 
+       text-align: right;
+   }
+}
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        display: flex;
+        @include screen('mobile') {
+            flex-direction: column;
+        }
+        li {
+            flex:0 1 auto;
+            margin: 0px 5px 5px 0px;
+            position: relative;
+            padding: 0 1.5em 0 0;
+            &:after{
+                content:'｜';
+                width:1em;
+                height: 1em;
+                position: absolute;
+                right:0;
+                top:0;
+            }
+            &:last-child{
+              &:after{
+                display: none;  
+            }  
+        }
+        @include screen('mobile') {
+         flex:1 1 100%; 
+     }
+     a {
+        display: block;
+        padding: 0;
+        color: #000;
+        font-size: 1.125em;
+        &:hover,
+        &:focus {
+            color:$aHover;  
+        }
+    }
+}
+}
+p {
+    line-height: 1.65em;
+    margin: 0;
+}
+.update,
+.counter {
+    display: inline-block;
+    margin-right: 5px;
+    em {
+        font-style: normal;
+        color: $primaryColor;
+        padding: 0 .5em;
+    }
+}
+.footer_icon {
+    a {
+        display: inline-block;
+        vertical-align: top;
+        position:relative;
+        &:focus {
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: 0px 0px 0px 1px $aHover inset;
+                z-index: 99;
+            }
+        }
+    }
+    img {
+        max-width: 120px;
+    }
+}
+
+.share {
+    box-sizing: border-box;
+    margin: 1em 0;
+    ul {
+        @include li-reset;
+        display: flex;
+        li {
+            margin: 0px 3px 3px;
+            flex:0 0 40px;
+            a{
+                display:block;
+                height: 40px;
+                border: solid 2px #12504e;
+                border-radius: 50%;
+                &:hover, &:focus{
+                    background:rgba(255, 255, 255, .8) ;
+                }
+            }
+            @include screen('tablet') {
+                margin: 0px 1px 2px;
+                width: 40px;
+                height: 40px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.bird1{
+    position: absolute;
+    left:110px;
+    top:86px;
+    img{
+        width: 150px;
+        height: auto;
+    }
+}
+.bird2{
+    position: absolute;
+    right:15px;
+    top:-28px;
+    img{
+        width: 240px;
+        height: auto;
+    }
+}
+
+}
